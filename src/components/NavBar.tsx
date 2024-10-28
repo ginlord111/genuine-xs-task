@@ -1,27 +1,28 @@
 import React from "react";
 import { Plus, Mail, Bell, CircleUserRound } from "lucide-react";
 import Link from "next/link";
+import HamburgerMenu from "./HamburgerMenu";
 
 const NavBar = () => {
   const leftSideNav = [
     {
-      label: "Item 1",
+      name: "Item 1",
       href: "/",
     },
     {
-      label: "Item 2",
+      name: "Item 2",
       href: "/",
     },
     {
-      label: "Item 3",
+      name: "Item 3",
       href: "/",
     },
     {
-      label: "Item 4",
+      name: "Item 4",
       href: "/",
     },
     {
-      label: "Item 5",
+      name: "Item 5",
       href: "/",
     },
   ];
@@ -32,21 +33,26 @@ const NavBar = () => {
     { name: "Notification", icon: <Bell />, href: "/" },
     { name: "Profile", icon: <CircleUserRound />, href: "" },
   ];
+  const mobileNav = [...leftSideNav, ...rightSideNav]
   return (
-    <nav className="relative flex px-24  w-full py-4 bg-[#818589]">
-      <div className="flex justify-start w-full space-x-12 text-white font-bold">
+    <nav className="relative flex md:px-24 px-4 w-full py-4 bg-[#818589]">
+      <div className="md:flex hidden justify-start w-full space-x-12 text-white font-bold">
         {leftSideNav.map((nav) => (
           <Link
           className="text-lg font-bold"
-          href={nav.href}>{nav.label}</Link>
+          key={nav.name}
+          href={nav.href}>{nav.name}</Link>
         ))}
       </div>
-      <div className="flex justify-end w-full space-x-6">
+      <div className="md:flex hidden justify-end w-full space-x-6">
         {rightSideNav.map((nav) => (
             <Link href={nav.href} className="text-white">
            {nav.icon}
             </Link>
         ))}
+      </div>
+      <div className="md:hidden flex justify-end w-full">
+        <HamburgerMenu mobileNav={mobileNav}/>
       </div>
     </nav>
   );

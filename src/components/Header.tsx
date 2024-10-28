@@ -21,7 +21,7 @@ const Header = () => {
             height={100}
             alt="META LOGO"
           />
-          <div className="text-3xl font-bold tracking-wide">
+          <div className="md:text-3xl text-xl whitespace-nowrap  font-bold tracking-wide">
             Cybersecurity Engineer
           </div>
         </div>

@@ -1,12 +1,14 @@
-import { candidatesData } from '@/candidates/candidates';
-import React from 'react'
+import { CandidateDataProps } from '@/candidates/candidates';
+import React, { Fragment } from 'react'
+import TableMobileView from './TableMobileView';
 
-const Table = () => {
+const Table = ({candidatesData}:{candidatesData:CandidateDataProps[]}) => {
     return (
-      <div className="overflow-x-auto">
-        <table className="min-w-full bg-white border border-gray-200 rounded-md">
-          <thead className="bg-gray-100 text-gray-700">
-            <tr>
+      <Fragment >  
+      <div className="lg:overflow-x-auto md:block hidden">
+        <table className="min-w-full w-full bg-white border border-gray-200 rounded-md">
+          <thead className="bg-gray-100 text-gray-700 f">
+            <tr  >
               <th className="px-4 py-2 border-b border-gray-200">
                 <input type="checkbox" className="flex items-start" />
               </th>
@@ -76,6 +78,10 @@ const Table = () => {
           </tbody>
         </table>
       </div>
+      <div className='md:hidden block'>
+            <TableMobileView candidatesData={candidatesData}/>
+      </div>
+      </Fragment>
     );
   };
 
