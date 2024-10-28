@@ -1,0 +1,38 @@
+export const candidatesData = [
+  {
+    name: "Olivia Anderson",
+    status: "In progress",
+    location: "Philippines",
+    experience: "10 years",
+    dateApplied: "August 16, 2024",
+    roleFit: "High",
+    roleFitColor: "bg-yellow-100 text-yellow-600",
+  },
+  {
+    name: "Samantha Smith",
+    status: "In progress",
+    location: "Indonesia",
+    experience: "4 years",
+    dateApplied: "August 15, 2024",
+    roleFit: "High",
+    roleFitColor: "bg-yellow-100 text-yellow-600",
+  },
+  {
+    name: "Carl Jefferson",
+    status: "In progress",
+    location: "Philippines",
+    experience: "2 years",
+    dateApplied: "August 12, 2024",
+    roleFit: "Medium",
+    roleFitColor: "bg-blue-100 text-blue-600",
+  },
+  {
+    name: "Taylor Alison",
+    status: "In progress",
+    location: "United Kingdom",
+    experience: "5 years",
+    dateApplied: "August 10, 2024",
+    roleFit: "Very Low",
+    roleFitColor: "bg-red-500 text-red-600",
+  },
+];
