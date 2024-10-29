@@ -54,8 +54,8 @@ const Candidates = () => {
         <div className='md:hidden flex'>
               <DropDowmMenu candidateNav={candidateNav} candidateFilterLength={candidateFilter.length}/>
         </div>
-        <div className=" flex w-full   md:justify-end  ">
-          <div className="w-[13rem]   flex  relative border rounded-full ">
+        <div className=" flex w-full overflow-hidden   md:justify-end  ">
+          <div className="w-fit   flex  relative border rounded-full ">
             <div className="absolute top-1 left-1">
               <Search className=" text-[#000000CC] w-5 h-5 ml-1   " />
             </div>
