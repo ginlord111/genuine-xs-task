@@ -33,26 +33,25 @@ const NavBar = () => {
     { name: "Notification", icon: <Bell />, href: "/" },
     { name: "Profile", icon: <CircleUserRound />, href: "" },
   ];
-  const mobileNav = [...leftSideNav, ...rightSideNav]
+  const mobileNav = [...leftSideNav, ...rightSideNav];
   return (
-    <nav className="relative flex md:px-24 px-4 w-full py-4 bg-[#818589]">
-      <div className="md:flex hidden justify-start w-full space-x-12 text-white font-bold">
+    <nav className="sticky  top-0 z-10 flex md:px-24 px-4 w-full py-4 bg-[#818589]">
+      <div className="md:flex hidden whitespace-nowrap justify-start w-full space-x-12 text-white font-bold">
         {leftSideNav.map((nav) => (
-          <Link
-          className="text-lg font-bold"
-          key={nav.name}
-          href={nav.href}>{nav.name}</Link>
+          <Link className="text-lg font-bold" key={nav.name} href={nav.href}>
+            {nav.name}
+          </Link>
         ))}
       </div>
       <div className="md:flex hidden justify-end w-full space-x-6">
         {rightSideNav.map((nav) => (
-            <Link href={nav.href} className="text-white">
-           {nav.icon}
-            </Link>
+          <Link href={nav.href} className="text-white" key={nav.name}>
+            {nav.icon}
+          </Link>
         ))}
       </div>
       <div className="md:hidden flex justify-end w-full">
-        <HamburgerMenu mobileNav={mobileNav}/>
+        <HamburgerMenu mobileNav={mobileNav} />
       </div>
     </nav>
   );
